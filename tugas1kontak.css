@@ -1,0 +1,9 @@
+body {
+    background-color: #dedede;
+}
+
+.card {
+    max-width: 600px;
+    margin: auto;
+    border-radius: 8px;
+}
