@@ -46,7 +46,7 @@
     <title>Kalkulator Sederhana</title>
 </head>
 <body>
-    <h2>Kalkulator Sederhana</h2>
+    <h2 class="text-center">Kalkulator Sederhana</h2>
     <form method="POST">
         <label>Masukkan angka pertama:</label>
         <input type="number" name="angka1" step="any" required>
