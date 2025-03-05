@@ -41,27 +41,21 @@
 
     <div class="container mt-3">
         <div class="card p-4 shadow">
-            <h2 class="text-center">Curriculum Vitae</h2>
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <div class="foto">
-                        <img src="tugas1/mee.jpg" alt="BWHAAA:v" width="150">
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <h4>Biodata</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Nama:</strong> Embun Bigar Hidayat</li>
-                        <li class="list-group-item"><strong>Jenis Kelamin:</strong> Laki-laki</li>
-                        <li class="list-group-item"><strong>Tanggal Lahir:</strong> 5 Juni 2004</li>
-                        <li class="list-group-item"><strong>Alamat:</strong> Karanggayam </li>
-                        <li class="list-group-item"><strong>Agama:</strong> Islam </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="c mt-3">
-                <p>© 2025</p>
-            </div>
+            <h2 class="text-center">Volume Kubus</h2>
+            <form method="POST">
+        <label>Masukkan sisi kubus:</label>
+        <input type="number" name="sisi" step="any" required>
+        <br>
+        <button type="submit" name="hitung_kubus">Hitung Volume</button>
+    </form> <br>
+    
+    <?php
+    if ($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST["hitung_kubus"])) {
+        $sisi = (float)$_POST["sisi"];
+        $volume_kubus = $sisi * $sisi * $sisi;
+        echo "<p>Volume Kubus: $volume_kubus</p>";
+    }
+    ?>
         </div>
     </div>
 

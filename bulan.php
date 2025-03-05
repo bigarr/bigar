@@ -2,13 +2,13 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Curriculum Vitae</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bulan</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="tugas1.css">
+    <link rel="stylesheet" href="bulan.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">Embun Bigar Hidayat</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,33 +38,32 @@
           </div>
         </div>
       </nav>
-
-    <div class="container mt-3">
+      <div class="container mt-3">
         <div class="card p-4 shadow">
-            <h2 class="text-center">Curriculum Vitae</h2>
-            <div class="row">
-                <div class="col-md-4 text-center">
-                    <div class="foto">
-                        <img src="tugas1/mee.jpg" alt="BWHAAA:v" width="150">
-                    </div>
-                </div>
-                <div class="col-md-8">
-                    <h4>Biodata</h4>
-                    <ul class="list-group">
-                        <li class="list-group-item"><strong>Nama:</strong> Embun Bigar Hidayat</li>
-                        <li class="list-group-item"><strong>Jenis Kelamin:</strong> Laki-laki</li>
-                        <li class="list-group-item"><strong>Tanggal Lahir:</strong> 5 Juni 2004</li>
-                        <li class="list-group-item"><strong>Alamat:</strong> Karanggayam </li>
-                        <li class="list-group-item"><strong>Agama:</strong> Islam </li>
-                    </ul>
-                </div>
-            </div>
-            <div class="c mt-3">
-                <p>© 2025</p>
-            </div>
-        </div>
-    </div>
+        <h1 class="text-center">Bulan</h1>
+        <form method="POST">
+        <label for="angka">Masukkan angka (1-12): </label>
+        <input type="number" name="angka" id="angka" min="1" max="12" required>
+        <button type="submit">Submit</button>
+        </form>
+    
+    <?php
+    function getBulan($angka) {
+        $bulan = [
+            1 => "Januari", 2 => "Februari", 3 => "Maret", 4 => "April",
+            5 => "Mei", 6 => "Juni", 7 => "Juli", 8 => "Agustus",
+            9 => "September", 10 => "Oktober", 11 => "November", 12 => "Desember"
+        ];
+        
+        return $bulan[$angka] ?? "Angka tidak valid, masukkan angka antara 1-12";
+    }
 
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        $angka = (int)$_POST["angka"];
+        echo "<p>Bulan: " . getBulan($angka) . "</p>";
+    }
+    ?>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
